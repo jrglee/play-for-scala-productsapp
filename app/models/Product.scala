@@ -1,6 +1,6 @@
 package models
 
-case class Product(ean: Long, name:String, description:String)
+case class Product(ean: Long, name: String, description: String)
 
 object Product {
   var products = Set(
@@ -14,4 +14,8 @@ object Product {
   def findAll = this.products.toList.sortBy(_.ean)
 
   def findByEan(ean: Long) = this.products.find(_.ean == ean)
+
+  def add(product: Product) {
+    this.products = this.products + product
+  }
 }

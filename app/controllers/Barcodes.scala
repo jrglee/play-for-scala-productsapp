@@ -18,7 +18,7 @@ object Barcodes extends Controller {
       Ok(imageData).as(mimeType)
     } catch {
       case e: IllegalArgumentException =>
-        BadRequest("Couldn' generate bar code. Error: " + e.getMessage)
+        BadRequest("Couldn't generate bar code. Error: " + e.getMessage)
     }
   }
 
